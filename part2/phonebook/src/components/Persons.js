@@ -6,8 +6,9 @@ const Persons = ({persons, filter}) => {
       person.name.toString().toLowerCase().includes(filter.toString().toLowerCase())) :
     persons
   
-  console.log(filteredPersons);
-  return filteredPersons.map((person) => <Person key={person.id} person={person} />)
+  return (filteredPersons.length > 0) ? 
+    filteredPersons.map((person) => <Person key={person.id} person={person} />) :
+    <div>No entries found.</div>
 }
 
 export default Persons;
