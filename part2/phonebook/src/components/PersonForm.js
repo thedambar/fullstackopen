@@ -14,9 +14,10 @@ const PersonForm = ({persons, setPersons}) => {
       alert(`${newName} is already in phonebook`);
       return;
     }
-    const newId = Math.max(persons.map(person => person.id))+1;
+    const newId = Math.max(...persons.map(person => parseInt(person.id))) + 1;
     setPersons(persons.concat({name: newName, number: newNumber, id: newId}));
     setNewName('');
+    setNewNumber('')
   }
 
   return (
