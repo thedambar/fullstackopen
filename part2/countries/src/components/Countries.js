@@ -1,8 +1,7 @@
-const CountryShort = ({country}) => <div>{country.name.common}</div>;
+const CountryShort = ({country, setFilter}) => <div>{country.name.common} <button onClick={() => setFilter(country.name.common)}>show</button></div>;
 
 const CountryDetails = ({country}) => {
   const keys = Object.keys(country.languages);
-  console.log(country.languages.keys)
   return (
     <div>
       <h1>{country.name.common}</h1>
@@ -17,7 +16,7 @@ const CountryDetails = ({country}) => {
   )
 }
 
-const Countries = ({countries, filter}) => {
+const Countries = ({countries, filter, setFilter}) => {
   const filteredCountries = countries?.filter((country) => 
     (country.name.common.toLowerCase().includes(filter.toString().toLowerCase())));
   
@@ -33,7 +32,7 @@ const Countries = ({countries, filter}) => {
   }
   return (
     filteredCountries.map(
-        (country) => <CountryShort key={country.name.official} country={country} />)
+        (country) => <CountryShort key={country.name.official} country={country} setFilter={setFilter} />)
   )
 }
 
