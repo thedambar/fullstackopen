@@ -32,4 +32,14 @@ const update = (id, newEntry) => {
     })
 }
 
-export default {getAll, create, update};
+const del = (id) => {
+  const request = axios.delete(`${baseUrl}/${id}`);
+  return request
+    .then(response => request.then(response.data))
+    .catch(error => {
+      console.log(error);
+      alert('Could not delete entry')
+    })
+}
+
+export default {getAll, create, update, del};

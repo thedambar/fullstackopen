@@ -1,59 +1,24 @@
 {
   "persons": [
     {
-      "name": "Arto Hellas",
-      "number": "040-123456",
+      "name": "Daniel Ambar",
+      "number": "213-453-3598",
       "id": 1
     },
     {
-      "name": "Ada Lovelace",
-      "number": "39-44-5323523",
+      "name": "Bez Ambar",
+      "number": "323-217-2778",
       "id": 2
     },
     {
-      "name": "Dan Abramov",
-      "number": "12-43-234345",
+      "name": "Anat Ambar",
+      "number": "323-1234-2345",
       "id": 3
     },
     {
-      "name": "Mary Poppendieck",
-      "number": "39-23-6423122",
+      "name": "Mira Haimovich",
+      "number": "972-54-1234-4523",
       "id": 4
-    },
-    {
-      "name": "Daniel Ambar",
-      "number": "213-453-3598",
-      "id": 5
-    },
-    {
-      "name": "Bez Ambar",
-      "number": "323-234-1234",
-      "id": 6
-    },
-    {
-      "name": "Hello There",
-      "number": "123-453-3562",
-      "id": 7
-    },
-    {
-      "name": "Hi",
-      "number": "123423423",
-      "id": 8
-    },
-    {
-      "name": "Testing",
-      "number": "1234",
-      "id": 9
-    },
-    {
-      "name": "Testin",
-      "number": "1234",
-      "id": 10
-    },
-    {
-      "name": "Anat Ambar",
-      "number": "324-32432-23",
-      "id": 11
     }
   ]
 }
