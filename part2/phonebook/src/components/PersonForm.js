@@ -11,9 +11,21 @@ const PersonForm = ({persons, setPersons}) => {
 
   const addPerson = (event) => {
     event.preventDefault();
-    if (persons.filter(person => person.name === newName).length > 0) {
-      alert(`${newName} is already in phonebook`);
-      return;
+    const testExists = persons.filter(person => person.name === newName);
+    if (testExists.length > 0) {
+      const oldEntry = testExists[0];
+      if (window.confirm(`${newName} is already in phonebook.  Update number to ${newNumber}`)) {
+        personService
+          .update(oldEntry.id, {name: newName, number: newNumber, id: oldEntry.id})
+          .then(newEntry => {
+            setPersons(persons.map(person => person.id !== newEntry.data.id ? person : newEntry.data))
+          })
+        setNewName('');
+        setNewNumber('');
+        return;
+      } else {
+        return;
+      }
     }
     personService
       .create({name: newName, number: newNumber})
