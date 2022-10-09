@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import personService from '../services/personService';
 
-const PersonForm = ({persons, setPersons}) => {
+const PersonForm = ({persons, setPersons, setError, setNotice}) => {
   const [newName, setNewName] = useState('');
   const [newNumber, setNewNumber] = useState('');
 
@@ -18,7 +18,13 @@ const PersonForm = ({persons, setPersons}) => {
         personService
           .update(oldEntry.id, {name: newName, number: newNumber, id: oldEntry.id})
           .then(newEntry => {
-            setPersons(persons.map(person => person.id !== newEntry.data.id ? person : newEntry.data))
+            setNotice(`Updated number for ${newName}`);
+            setTimeout(() => setNotice(null), 5000);
+            setPersons(persons.map(person => person.id !== newEntry.data.id ? person : newEntry.data));
+          })
+          .catch(error => {
+            setError(`Error updating ${newName}`);
+            setTimeout(() => setError(null), 5000);
           })
         setNewName('');
         setNewNumber('');
@@ -30,8 +36,13 @@ const PersonForm = ({persons, setPersons}) => {
     personService
       .create({name: newName, number: newNumber})
       .then(newEntry => {
+        setNotice(`Added entry for ${newName}`);
+        setTimeout(() => setNotice(null), 5000);
         setPersons(persons.concat(newEntry)) 
-        console.log('newEntry is', newEntry);
+      })
+      .catch(error => {
+        setError(`Error creating entry ${newName}`);
+        setTimeout(() => setError(null), 5000);     
       })
     setNewName('');
     setNewNumber('')

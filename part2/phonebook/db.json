@@ -2,23 +2,13 @@
   "persons": [
     {
       "name": "Daniel Ambar",
-      "number": "213-453-3598",
-      "id": 1
-    },
-    {
-      "name": "Bez Ambar",
-      "number": "323-217-2778",
-      "id": 2
-    },
-    {
-      "name": "Anat Ambar",
-      "number": "323-1234-2345",
-      "id": 3
-    },
-    {
-      "name": "Mira Haimovich",
-      "number": "972-54-1234-4523",
+      "number": "523-212-3424",
       "id": 4
+    },
+    {
+      "name": "Betzalel Ambar",
+      "number": "323-234-1234",
+      "id": 5
     }
   ]
 }
